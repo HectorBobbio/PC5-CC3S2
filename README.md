@@ -1,3 +1,23 @@
+# Parte 1
+**Pregunta 1**
+Para solucionar el problema de que un usuario pueda ingresar de manera manual un URI para mostrar una pelicula que no existe, editamos el método show del controlador para manejar la excepcion causada por el usuario, redirigiendolo a la vista principal con un mensaje de alerta.
+
+```ruby
+def show
+    id = params[:id] # retrieve movie ID from URI route
+    begin
+      @movie = Movie.find(id)
+    rescue
+      flash[:notice] = "Couldnt find movie with id #{id}"
+      redirect_to movies_path
+    end
+  end
+```
+
+Ahora, si un usuario intenta ingresar a `movies/9999` sin que una pelicula con id = 9999 exista, encontrará:
+
+![](/imgs/notice.png)
+
 # Parte 2: Cucumber
 **Feature #1: Filter Movie List** 
 La estructura del primer escenario `restrict to movies with "PG" or "R" ratings` será la siguiente:
