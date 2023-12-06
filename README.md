@@ -68,3 +68,8 @@ Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
   expect(index_e1 < index_e2)
 end
 ```
+
+Finalmente, verificamos que todas las pruebas pasan:
+
+![](./imgs/Feature1.png)
+![](./imgs/Feature2.png)
