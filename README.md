@@ -35,6 +35,29 @@ end
 ```
 La referencia a `request.env['omniauth.auth']` podria estar en su propio metodo progetido `auth_hash` para que solo otros metodos de la clase SessionsController puedan utilizarla, tambien podría ser para tener código más limpio con menos repeticiones.
 
+**Pregunta 4**
+Para el siguiente escenario:
+```
+Given the movie "Inception" exists
+	And it has 5 reviews
+	And its average review score is 3.5
+```
+
+Podemos definir los pasos de la siguiente manera:
+
+```ruby
+Given /the movie "(.+)" exists/ do |title|
+    Movie.create(movie)
+end
+
+When /it has (%d+) reviews/ do |nro|
+    nro.times do
+        Review.create(:movie => )
+    end
+end
+```
+
+
 **Pregunta 7**
 ```ruby
 require 'f1'
