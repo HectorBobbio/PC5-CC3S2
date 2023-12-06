@@ -51,9 +51,7 @@ Given /the movie "(.+)" exists/ do |title|
 end
 
 When /it has (%d+) reviews/ do |nro|
-    nro.times do
-        Review.create(:movie => )
-    end
+
 end
 ```
 
